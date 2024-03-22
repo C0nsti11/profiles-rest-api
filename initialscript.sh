@@ -5,6 +5,6 @@ if ! grep -q virtualenvwrapper /home/vagrant/.bashrc; then
     newgrp
     mkvirtualenv .django
     workon .django
-    pip install django flask
+    pip install django flask djangorestframework markdown django-filter
     deactivate
 fi
