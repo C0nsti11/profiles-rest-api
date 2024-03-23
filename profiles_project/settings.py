@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     'profiles_api',
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'profiles_api.permissions.DisableDangerousMethods',
-    )
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'profiles_api.permissions.DisableDangerousMethods',
+#     )
+# }
 
 
 

@@ -37,7 +37,29 @@ class HelloApiView(APIView):
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
-    http_method_names = methods     
+        
+    def put(self, request, pk=None):
+        """
+        Handle updating an object
+        """
+        return Response({'method': 'PUT'})
+        
+    
+    def patch(self, request, pk=None):
+        """
+        Handle partial update of an object
+        """
+        return Response({'method': 'PATCH'})
+    
+    
+    def delete(self, request, pk=None):
+        """
+        Delete an object
+        """
+        return Response({'method': 'DELETE'})
+    
+    
+    # http_method_names = methods     
     # @property
     # def allowed_methods(self):
     #     allowed_methods = super().allowed_methods
@@ -79,9 +101,9 @@ class HelloViewSet(viewsets.ViewSet):
                 status= status.HTTP_400_BAD_REQUEST
             )
     
-    def retrive(self, request, pk=None):
+    def retrieve(self, request, pk=None):
         """
-        Handle getting an object by iits ID
+        Handle getting an object by its ID
         """
         return Response({'http_method':'GET'})
     
@@ -89,11 +111,11 @@ class HelloViewSet(viewsets.ViewSet):
         """
         Handle updating an object
         """
-        return Response({'http_method':'PUT'})
+        return Response({'http_method':'POST'})
     
     def partial_update(self, request, pk=None):
         """
-        Handle partial updating an object
+        Handle partial update of  an object
         """
         return Response({'http_method':'PATCH'})
     
