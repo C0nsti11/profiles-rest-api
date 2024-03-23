@@ -42,6 +42,14 @@ INSTALLED_APPS = [
     'profiles_api',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'profiles_api.permissions.DisableDangerousMethods',
+    )
+}
+
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
